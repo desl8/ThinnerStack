@@ -16,12 +16,27 @@
     <input type="text" id="timefield" placeholder="Enter your estimated time">
     <button id="addbutton">Add!</button>
     <div id="schedule">
+        <table>
+            <tbody id = "InnerSchedule">
+                <th>
+                    Your calendar so far
+                </th>
+                <tr>
+                    <td class="DeleteMe">
+                        Name of task
+                    </td>
+                    <td>
+                        Time to complete
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <button id="clearbutton">Clear list</button>
     <br>
     <br> 
     <label>I need to finish these tasks in</label>
-    <input type="number" id="reqtimefield" name="reqtime" placeholder="Enter your estimated time (in minutes)">
+    <input type="number" id="reqtimefield" placeholder="Enter your estimated time (in minutes)">
     <label>minutes</label>
     <div class="superbutton">
         <h4 align="center">Manage my workload!</h4>
