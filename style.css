@@ -1,0 +1,27 @@
+body{
+    background-image: url("background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2{
+    color: white;
+    font-family: "arial";
+    text-align: center;
+}
+h4{
+    color: white;
+    font-family: "arial";
+    text-align: center;
+}
+.button{
+    max-width: 145px;
+    min-width: 145px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgb(248, 82, 110);
+    width: fit-content;
+    display: table-cell;
+}
+a{
+    text-decoration: none;
+}
