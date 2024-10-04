@@ -8,16 +8,39 @@ function updateCalendar(){
         schedule.appendChild(row);
         let activityCell = document.createElement("td");   
         activityCell.innerText = array[i][0];
-        let expectedTimeCell = document.createElement("td")
-        expectedTimeCell.innerText = array[i][1]
+        let expectedTimeCell = document.createElement("td");
+        expectedTimeCell.innerText = array[i][1];
         row.appendChild(activityCell);
         row.appendChild(expectedTimeCell);
-        row.className = "RemovableRow"
+        row.className = "RemovableRow";
     }
+}
+function thinTheStack(){
+    desiredtime = document.getElementById("reqtimefield").value;
+    var sumtime = 0
+    for(let i = 0; i < array.length; i ++){
+        sumtime += parseInt(array[i][1]);
+    }
+    console.log(sumtime);
+    while (desiredtime < sumtime && sumtime > 0){
+        array.splice(Math.floor(Math.random() * array.length), 1);
+        sumtime = 0
+        for(let i = 0; i < array.length; i ++){
+            sumtime += parseInt(array[i][1]);
+        }
+        console.log(sumtime);
+        updateCalendar();
+    }
+    document.getElementById("schedtitle").innerText = "Your New Schedule!";
+    var newlink = document.createElement("a");
+    newlink.href = "https://www.youtube.com/watch?v=qyYHWkVWQ4o"
+    newlink.innerHTML = "That's too hard, I want to procrastinate"
+    document.body.appendChild(newlink);
+
 }
 document.querySelector("#clearbutton").addEventListener("click", function(){array = []; updateCalendar();});
 document.querySelector("#addbutton").addEventListener("click", function(){array.push([document.getElementById("namefield").value,document.getElementById("timefield").value]); updateCalendar();});
-doccument.querySelector("#")
+document.querySelector("#superbutton").addEventListener("click", function(){thinTheStack();});
 
 //Henrick absolutely cooked
 
