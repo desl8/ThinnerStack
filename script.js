@@ -1,4 +1,5 @@
 let array = [];
+var flag = 0;
 function updateCalendar(){
     let schedule = document.getElementById("InnerSchedule");
     Array.from(document.getElementsByClassName("RemovableRow")).forEach((e)=>{e.remove();console.log(e.innerText)});
@@ -32,10 +33,13 @@ function thinTheStack(){
         updateCalendar();
     }
     document.getElementById("schedtitle").innerText = "Your New Schedule!";
-    var newlink = document.createElement("a");
-    newlink.href = "https://www.youtube.com/watch?v=qyYHWkVWQ4o"
-    newlink.innerHTML = "That's too hard, I want to procrastinate"
-    document.body.appendChild(newlink);
+    if (flag == 0){
+        var newlink = document.createElement("a");
+        newlink.href = "https://www.youtube.com/watch?v=qyYHWkVWQ4o"
+        newlink.innerHTML = "That's too hard, I want to procrastinate"
+        document.body.appendChild(newlink);
+        flag = 1;
+    }
 
 }
 document.querySelector("#clearbutton").addEventListener("click", function(){array = []; updateCalendar();});
